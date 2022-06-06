@@ -61,20 +61,5 @@ def equation_test(word_val_df):
     print(df_solution_output,df_datashape,df_max_val)
 
 #-- Driver Code With Runtime Test --#
-# word_val_df = create_dataframes()
-# equation_solve = equation_test(word_val_df)
-
-#-------- Create DataFrame --------#
-np_1_start = time.perf_counter_ns()
 word_val_df = create_dataframes()
 equation_solve = equation_test(word_val_df)
-np_1_end = time.perf_counter_ns()
-np_1_time = np_1_end - np_1_start
-print(f'Total Runtime: {np_1_time/1e+6} ms\n')
-
-# #-------- Equation Test --------#
-# np_2_start = time.perf_counter_ns()
-# equation_solve = equation_test(word_val_df)
-# np_2_end = time.perf_counter_ns()
-# np_2_time = np_2_end - np_2_start
-# print(f'Equation Test Runtime: {np_2_time/1e+6} ms\n')
