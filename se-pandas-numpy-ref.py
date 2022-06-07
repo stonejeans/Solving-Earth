@@ -1,0 +1,83 @@
+import numpy as np
+import pandas as pd
+
+
+def mpermutations(n):
+    '''NumPy solution that builds the permutations of size m 
+    by modifying the permutations of size m-1. 
+    Credit to Superb Rain:
+    https://stackoverflow.com/questions/64291076/generating-all-permutations-efficiently'''
+
+    a = np.zeros((np.math.factorial(n), n), np.uint8)
+    f = 1
+    for m in range(2, n+1):
+        b = a[:f, n-m+1:]      # the block of permutations of range(m-1)
+        for i in range(1, m):
+            a[i*f:(i+1)*f, n-m] = i
+            a[i*f:(i+1)*f, n-m+1:] = b + (b >= i)
+        b += 1
+        f *= m
+
+    return a
+
+
+def create_dataframes():
+    '''Create DataFrames using the Pandas library'''
+
+    my_column_vals = ["a" , "e", "h", "n", "o", "r", "s", "t", "u", "w"]
+    my_column_words = ['north', 'west', 'south', 'east','earth']
+    
+    my_np_array = mpermutations(10)
+    char_val_df = pd.DataFrame(data = my_np_array, columns=my_column_vals)
+    # Clean up and drop redundancies from the DataFrame.
+    char_val_df.drop(
+        char_val_df[
+            (char_val_df.n + char_val_df.s > char_val_df.e) \
+                | (char_val_df.n > char_val_df.e) \
+                    | (char_val_df.s > char_val_df.e) \
+
+                        | (char_val_df.h >= 1) & (char_val_df.h < 4) \
+                            | (char_val_df.h >= 5) & (char_val_df.h < 8) \
+                                | (char_val_df.w == 5) | (char_val_df.w == 9) \
+                                    | (char_val_df.e < 3) 
+            ].index, inplace=True
+        )
+
+    char_val_df= char_val_df.applymap(str)
+
+    word_val_df = pd.DataFrame(data = char_val_df, columns= my_column_words)
+    # Concatenate specific column values (Strings only)
+    word_val_df['north'] = char_val_df['n'] + char_val_df['o'] \
+        + char_val_df['r'] + char_val_df['t'] + char_val_df['h']
+    
+    word_val_df['west'] = char_val_df['w'] + char_val_df['e'] + char_val_df['s'] + char_val_df['t']
+    
+    word_val_df['south'] = char_val_df['s'] + char_val_df['o'] \
+        + char_val_df['u'] + char_val_df['t'] + char_val_df['h']
+    
+    word_val_df['east'] = char_val_df['e'] + char_val_df['a']+ char_val_df['s'] + char_val_df['t']
+    
+    word_val_df['earth'] = char_val_df['e'] + char_val_df['a'] + char_val_df['r'] \
+        + char_val_df['t'] + char_val_df['h']
+
+    word_val_df= word_val_df.astype(int)
+
+    equation_test(word_val_df)
+
+
+def equation_test(word_val_df):
+    '''Use numpy to sum values and test if equation holds true'''
+
+    word_val_df.drop(word_val_df[
+        ~(word_val_df.earth == word_val_df.north + word_val_df.south + word_val_df.east + word_val_df.west)
+        ].index, inplace=True)
+
+    df_data = (f"\nPossible Solutions: \n{word_val_df}\n")
+    max_val = word_val_df[word_val_df['earth'] == word_val_df['earth'].max()]
+    df_max_val = (f"\nEarth Max Value:\n\n{max_val}\n")
+
+    print(df_data, df_max_val)
+
+
+if __name__ == "__main__":
+    create_dataframes()
