@@ -70,8 +70,16 @@ Initial Runtime Tests:
 Solving Earth Max Value: 97850
 Runtime: 66035.6451 ms
 ```
+
+### Pandas / Numpy (Optimised):
+Initial Runtime Tests:
+<br>
+```
+Solving Earth Max Value: 97850
+Runtime: 23408.9194 ms
+```
 <br><br>
-With a 10x efficiency gain over Intertools, using Pandas and Numpy is heading in the right direction.
+With a 27x efficiency gain over Intertools, using Pandas and Numpy is heading in the right direction.
 We can obtain some useful information regarding the dtypes and memory usage of our DataFrames.
 <br><br>
 ```
@@ -88,9 +96,9 @@ memory usage: 2.0 GB
 
 
 ## Project Approach
-<br><code>se-intertools.py</code> project file demonstrates the use of the Itertools library to create permutations and list comprehensions to compile searchable lists and dictionaries. 
-<br><code>se-pandas-numpy.py</code> project file demonstrates the use of Pandas to create DataFrames and Numpy to build the permutations needed to solve the problem statement equation.
-<br>
+<br><code>se-intertools.py</code> project file demonstrates the use of the Itertools library to create permutations and list comprehensions to compile searchable lists and dictionaries.<br>
+<br><code>se-pandas-numpy.py</code> project file demonstrates the use of Pandas to create DataFrames and Numpy to build the permutations needed to solve the problem statement equation.<br>
+<br><code>se-pandas-numpy-opt.py</code> project file is based on the same approach as seen in <code>se-pandas-numpy.py</code>. Here we use some cleanup techniques to remove redundencies and assist with runtime efficiency gains.<br>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
