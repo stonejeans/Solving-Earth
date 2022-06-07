@@ -79,7 +79,7 @@ Solving Earth Max Value: 97850
 Runtime: 15680.4082 ms
 ```
 <br><br>
-With a 27x efficiency gain over Intertools, using Pandas and Numpy is heading in the right direction.
+With a 43x efficiency gain over Intertools, using Pandas and Numpy is heading in the right direction.
 We can obtain some useful information regarding the dtypes and memory usage of our DataFrames.
 <br><br>
 ```
@@ -111,21 +111,21 @@ memory usage: 2.0 GB
 
 ### Prerequisites:
 
-- [Python]()
-- [Pandas]()
+- [Python](https://www.python.org/downloads/)
+- [Pandas](https://pandas.pydata.org/)
 - [Numpy](https://numpy.org/)
 
 <br>
 
 ### Installation:
 
-This is a [Python]() project with dependancies through the
-[pip registry]().
+This is a [Python](https://www.python.org) project with dependancies through the
+[pip registry](https://pypi.org/).
 
-Before running the code, [download and install Python]().
+Before running the code, [download and install Python](https://www.python.org/downloads/).
 
 Installation is done using the
-[`pip install` command]():
+[`pip install` command](https://pypi.org/):
 
 **1. Install Pandas:**
   ```sh
@@ -147,5 +147,5 @@ Installation is done using the
 ## Author
 
 - Website - [Coming Soon]()
-- Developer - [Shaun Bristow]()
+- Developer - [Shaun Bristow](https://github.com/stonejeans/)
 
