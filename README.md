@@ -49,7 +49,7 @@ There are 10 unique characters in the below puzzle, assign a unique number from 
 
 ## First Look:
 The problem statement is solved through addressing 4 sub-problems. 
-1. Build possible combinations using a value range of 0 to 9. 
+1. Calculate all possible unique combinations using a value range of 0 to 9. 
 2. Assign those combination values to characters. 
 3. Iterate through the combinations and determine if the equation holds true. 
 4. Get max value.
@@ -76,7 +76,7 @@ Initial Runtime Tests:
 <br>
 ```
 Solving Earth Max Value: 97850
-Runtime: 23408.9194 ms
+Runtime: 15680.4082 ms
 ```
 <br><br>
 With a 27x efficiency gain over Intertools, using Pandas and Numpy is heading in the right direction.
