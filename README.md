@@ -12,7 +12,7 @@ A project repository that contains solutions to the Solving Earth problem.
 - [Problem Statement](#problem-statement)
   - [Puzzle](#puzzle)
 - [First Look](#first-look)
-  - [Intertools](#intertools)
+  - [Itertools](#itertools)
   - [Pandas / Numpy](#pandas-numpy)
 - [Project Approach](#project-approach)
   - [Built with](#built-with)
@@ -56,7 +56,7 @@ The problem statement is solved through addressing 4 sub-problems.
 
 <br>
 
-### Intertools:
+### Itertools:
 Initial Runtime Tests:  
 ```
 Solving Earth Max Value: 97850
@@ -78,12 +78,20 @@ Initial Runtime Tests:
 Solving Earth Max Value: 97850
 Runtime: 15680.4082 ms
 ```
+
+### Pandas / Numpy (Refactored):
+Initial Runtime Tests:
+<br>
+```
+Solving Earth Max Value: 97850
+Runtime: 4485.6159 ms
+```
 <br><br>
-With a 43x efficiency gain over Intertools, using Pandas and Numpy is heading in the right direction.
+With a 153x efficiency gain over Itertools, using Pandas and Numpy is heading in the right direction.
 We can obtain some useful information regarding the dtypes and memory usage of our DataFrames.
 <br><br>
 ```
-dtypes: int32(5), object(10)
+dtypes: object(5)
 memory usage: 2.0 GB
 ```
 <br><br>
@@ -99,6 +107,7 @@ memory usage: 2.0 GB
 <br><code>se-intertools.py</code> project file demonstrates the use of the Itertools library to create permutations and list comprehensions to compile searchable lists and dictionaries.<br>
 <br><code>se-pandas-numpy.py</code> project file demonstrates the use of Pandas to create DataFrames and Numpy to build the permutations needed to solve the problem statement equation.<br>
 <br><code>se-pandas-numpy-opt.py</code> project file is based on the same approach as seen in <code>se-pandas-numpy.py</code>. Here we use some cleanup techniques to remove redundencies and assist with runtime efficiency gains.<br>
+<br><code>se-pandas-numpy-ref.py</code> by refactoring and expanding on the conditional parameters, efficiency gains are seen due to the reduction in the dataframe size.<br>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -145,7 +154,5 @@ Installation is done using the
 
 
 ## Author
-
-- Website - [Coming Soon]()
 - Developer - [Shaun Bristow](https://github.com/stonejeans/)
 
