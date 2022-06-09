@@ -59,7 +59,7 @@ The problem statement is solved through addressing 4 sub-problems.
 ### Itertools:
 Initial Runtime Tests:  
 ```
-Solving Earth Max Value: 97850
+Solving Earth Solutions: 24
 Runtime: 685707.3515 ms
 ```
 
@@ -67,7 +67,7 @@ Runtime: 685707.3515 ms
 Initial Runtime Tests:
 <br>
 ```
-Solving Earth Max Value: 97850
+Solving Earth Solutions: 24
 Runtime: 66035.6451 ms
 ```
 
@@ -75,7 +75,7 @@ Runtime: 66035.6451 ms
 Initial Runtime Tests:
 <br>
 ```
-Solving Earth Max Value: 97850
+Solving Earth Solutions: 24
 Runtime: 15680.4082 ms
 ```
 
@@ -83,7 +83,7 @@ Runtime: 15680.4082 ms
 Initial Runtime Tests:
 <br>
 ```
-Solving Earth Max Value: 97850
+Solving Earth Solutions: 24
 Runtime: 4485.6159 ms
 ```
 
@@ -91,11 +91,11 @@ Runtime: 4485.6159 ms
 Initial Runtime Tests:
 <br>
 ```
-Solving Earth Max Value: 97850
+Solving Earth Solutions: 24
 Runtime: 1140.7ms
 ```
 <br><br>
-With a 153x efficiency gain over Itertools, using Pandas and Numpy is heading in the right direction.
+With over 153x efficiency gains over Itertools, using the Pandas and Numpy library is a step in the right direction towards to 50ms benchmark.
 We can obtain some useful information regarding the dtypes and memory usage of our DataFrames.
 <br><br>
 ```
